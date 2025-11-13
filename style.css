@@ -1,24 +1,40 @@
-	html, body {
-		font-family: 'Lato', sans-serif;
+	:root {
+		--brand-red: #a60000;
+		--brand-dark: #6b0000;
+		--brand-soft: #fff5f2;
+		--border-gray: #e3e7ec;
 	}
-	
-	
+
+html, body {
+		font-family: 'Lato', sans-serif;
+		background: #fff;
+	}
+
+
     body {
 		font-size: 100%;
 		position: relative;
 		font-weight: 400;
-		color: #353030;
+		color: #333;
+	}
+
+	body.body_index,
+	body.body_style {
+		padding-top: 80px;
+		line-height: 1.65;
+		background: #f8f9ff;
 	}
 
 	.workshop-title {
 		font-size: 300%;       /* display-5 */
 		font-weight: bold;       /* font-weight-bold */
 		margin-bottom: 1rem;     /* mb-3 */
-		color: #353030;            /* text-white */
+		color: #2f2e2c;
+		text-shadow: 0 2px 12px rgba(0,0,0,0.04);
 	}
 
 	.subtitle{
-		color: #990000;
+		color: var(--brand-red);
 		text-align:left;
 		font-weight: 400;
 		margin-bottom: 1%;
@@ -50,9 +66,22 @@
 		margin:0;
 		background-color:#ffffff43;
 	}
+	.hero-spacer {
+		height: 70px;
+	}
 	.extra-roles{
-		font-size:100%
-	
+		font-size: 100%;
+		line-height: 1.7;
+		margin-bottom: 1.25rem;
+	}
+
+	.extra-roles ul {
+		padding-left: 1.3rem;
+		margin: 0.25rem 0;
+	}
+
+	.extra-roles ul li {
+		margin-bottom: 0.5rem;
 	}
 	.sub-skills{
 		margin: 0;
@@ -131,6 +160,10 @@
 		border-radius: 8px;
 	}
 
+	.guest-profile-picture {
+		border-radius: 50%;
+	}
+
 	.organizer-profile-picture {
 		width: 130px; 
 		height: 130px; 
@@ -153,9 +186,9 @@
 
 	/* Custom Navbar Styles */
 	.navbar-custom {
-		background-color: #fff;
+		background: linear-gradient(90deg, #fff 0%, #fff 55%, #f5f5f5 100%);
 		border: none;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 		font-weight: 400;
 		font-size: 18px;
 	}
@@ -164,5 +197,256 @@
 	.navbar-custom a,
 	.navbar-custom .nav-link,
 	.navbar-custom .navbar-brand {
-		color: #757575;
+		color: #555;
 	}
+	.navbar-custom .nav-link:hover {
+		color: var(--brand-dark);
+	}
+
+	.topical-hero {
+		gap: 1rem;
+		margin-top: 0.5rem;
+	}
+
+	.topical-hero .btn {
+		padding: 0.5rem 1.5rem;
+		font-weight: 600;
+		border-radius: 999px;
+		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+	}
+
+	.topical-hero .btn-primary {
+		background: linear-gradient(135deg, #1f3b91, #4f46e5);
+		border: none;
+		color: #fff;
+	}
+
+	.topical-hero .btn-outline-secondary {
+		border-color: #5a5a5a;
+		color: #3f3f3f;
+	}
+
+	.topical-hero .btn-outline-secondary:hover {
+		color: #fff;
+		background-color: #3c3c3c;
+		border-color: #3c3c3c;
+	}
+
+	.topical-card-title {
+		color: #1f3b91;
+		font-weight: 600;
+	}
+
+	.page-bottom-buffer {
+		margin-bottom: 4rem;
+
+	}
+
+	.date-intro {
+		color: #3a3a3a;
+		margin-bottom: 0;
+		font-size: 1rem;
+	}
+
+	.striped-section {
+		background: #fff;
+		padding: 0.75rem 0;
+		margin: 0;
+	}
+
+	.striped-section.striped-alt {
+		background: #f4f7fb;
+	}
+
+	.deadline-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+
+	.deadline-card {
+		background: var(--brand-soft);
+		border: 1px solid var(--border-gray);
+		border-radius: 12px;
+		padding: 0.65rem;
+		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+		transition: transform 0.25s ease, border-color 0.25s ease;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.deadline-card-link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		height: 100%;
+	}
+
+	.deadline-card:hover {
+		transform: translateY(-3px);
+	}
+
+	.deadline-card-highlight {
+		border-color: var(--brand-red);
+		box-shadow: 0 14px 30px rgba(166, 0, 0, 0.18);
+		background: #fff;
+	}
+
+	.deadline-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 0.5rem;
+	}
+
+	.deadline-badge {
+		font-size: 0.7rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #990000;
+	}
+
+	.deadline-date {
+		font-size: 0.8rem;
+		color: #555;
+	}
+
+	.deadline-title {
+		font-size: 1.15rem;
+		margin: 0;
+		color: #2e2e2e;
+	}
+
+	.deadline-status-upcoming {
+		margin: 0;
+		font-weight: 600;
+		color: #0066cc;
+		font-size: 0.85rem;
+	}
+
+	.deadline-status-past {
+		margin: 0;
+		font-weight: 600;
+		color: #cc0000;
+		font-size: 0.85rem;
+	}
+
+	#Important-Dates {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	#Important-Dates .subtitle {
+		margin-top: 0.3rem;
+		margin-bottom: 0.3rem;
+		font-size: 1.5rem;
+	}
+
+	#Important-Dates .date-intro {
+		margin-bottom: 0.25rem;
+		font-size: 0.95rem;
+	}
+
+
+		.important-date-callout {
+			padding: 0.6rem 1.0rem;
+			border-radius: 1rem;
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(239, 246, 255, 0.92));
+			box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+			width: 100%;
+			min-height: 50px;
+			max-width: 450px;
+			margin: 0;
+		}
+
+		.important-date-callout.split {
+			display: grid;
+			grid-template-columns: minmax(120px, 1fr) minmax(200px, 1fr);
+			gap: 1rem;
+			align-items: center;
+		}
+
+		.important-date-callout .label {
+			font-size: 0.75rem;
+			letter-spacing: 0.25em;
+			text-transform: uppercase;
+			color: #556cd6;
+			margin-bottom: 0.25rem;
+		}
+
+		.important-date-callout .date {
+			font-size: 1.2rem;
+			font-weight: 600;
+			margin-bottom: 0.25rem;
+			color: #111;
+		}
+		
+		.small-text {
+			font-size: 0.85rem;
+			color: #4a4a4a;
+			margin: 0;
+		}
+
+		.important-date-callout .countdown-column {
+			text-align: center;
+		}
+
+		.important-date-callout .deadline-column {
+			text-align: left;
+		}
+
+		.important-dates-section {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			align-items: stretch;
+		}
+
+		.important-dates-list.compact {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.important-dates-list.compact span {
+			font-size: 0.85rem;
+			padding: 0.35rem 0.9rem;
+		}
+
+		@media (min-width: 500px) {
+			.important-dates-section {
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: space-between;
+			}
+
+			.important-dates-list.compact {
+				max-width: 600px;
+				justify-content: flex-start;
+			}
+		}
+
+	.countdown-text {
+		font-size: 1.2rem;
+		font-weight: 600;
+		margin: 0.1rem 0;
+		color: #1d1d1d;
+	}
+
+		.important-dates-list {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.75rem;
+			font-size: 0.95rem;
+			color: #2f2f2f;
+		}
+
+		.important-dates-list span {
+			display: block;
+			background: #f9f9fb;
+			padding: 0.6rem;
+			border-radius: 0.75rem;
+			box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+		}

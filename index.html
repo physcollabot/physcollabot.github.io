@@ -47,6 +47,7 @@
 					<li class="nav-item active"><a class="nav-link" href="./program/">Program</a></li>
 					<li class="nav-item active"><a class="nav-link" href="./call/">Call for Papers</a></li>
 					<li class="nav-item active"><a class="nav-link" href="./attend/">Attend</a></li>	
+					<li class="nav-item active"><a class="nav-link" href="./topical/">Topical Collection</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -58,7 +59,7 @@
 				 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: 
 				 cover; opacity: 0.97; z-index: -1;"> -->
 		
-		    <br><br><br><br>
+			<div class="hero-spacer"></div>
 		
 			<!-- Foreground content -->
 			<div class="container custom-container-width position-relative" style="z-index: 1;">
@@ -86,44 +87,55 @@
 			<!-- Spacer if needed -->
 		</section>
 		
-		
-		
 
-		<section id="Main-Part">
-
+		<section id="Main-Part" class="striped-section">
 			<div class="container custom-container-width">
-				<br>
-				<div class = "row">	
+				<div class = "row mt-3">	
 					<div class="col-md-12">
 						<h3 class="subtitle">Overview</h3>	
 						<hr class="m-y-2">	
 					</div>
-				
 					<div class="col-md-12">
-					<p class = "extra-roles">
-						Modern aerial robots are expected to operate in increasingly complex environments while interacting with humans. 
-						Traditional mathematical tools often fail to handle complex sensor input, extreme agility control, 
-						and indirect goal specifications. 
-						They rely on explicit representations and goal specifications. 
-						Moreover, explicit representations are often computationally expensive to obtain and reason over.
-						<br>
-						<br>
-						Therefore, implicit methods, 
-						which leverage data and the underlying structures of perception, control, and planning, 
-						are gaining increasing attention. 
-						By embedding knowledge, constraints, and task specifications directly within learning frameworks, 
-						implicit methods connect classical robotic paradigms with machine learning across multiple levels of abstraction. 
-						Our Workshop will explore how implicit approaches, such as implicit representations (e.g., NeRF, Gaussian Splatting), implicit learning, and knowledge embedding, can be leveraged for aerial robots. 
-						<br>
-						<br>
-						We aim to encourage a dynamic exchange of ideas between the audience and experts in control, planning, and perception, inspiring discussions on the role of implicit methods in the next generation of intelligent autonomy. 
+						<p class = "extra-roles">
+							Modern aerial robots are expected to operate in increasingly complex environments while interacting with humans. 
+							Traditional mathematical tools often fail to handle complex sensor input, extreme agility control, 
+							and indirect goal specifications. 
+							They rely on explicit representations and goal specifications. 
+							Moreover, explicit representations are often computationally expensive to obtain and reason over.
+							<br>
+							<br>
+							Therefore, implicit methods, 
+							which leverage data and the underlying structures of perception, control, and planning, 
+							are gaining increasing attention. 
+							By embedding knowledge, constraints, and task specifications directly within learning frameworks, 
+							implicit methods connect classical robotic paradigms with machine learning across multiple levels of abstraction. 
+							Our Workshop will explore how implicit approaches, such as implicit representations (e.g., NeRF, Gaussian Splatting), implicit learning, and knowledge embedding, can be leveraged for aerial robots. 
+							<br>
+							<br>
+							We aim to encourage a dynamic exchange of ideas between the audience and experts in control, planning, and perception, inspiring discussions on the role of implicit methods in the next generation of intelligent autonomy. 
 
-					</p>   
-					
+						</p>   
 					</div>
 				</div>
+        </section>
 
-
+        <section id="Important-Dates" class="striped-section">
+            <div class="container custom-container-width">
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <h3 class="subtitle">Important Dates</h3>
+                        <hr class="m-y-2">
+                        <p class="date-intro">
+                            Deadlines continue to progress from today (<span id="current-date"></span>).
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="deadline-grid" id="important-dates-grid"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 				<!-- <div id="bodyContent3"></div>
@@ -138,6 +150,118 @@
 					.catch(error => console.log("Error loading the content: ", error));
 				</script>
  -->
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const deadlines = [
+					{
+						title: 'Submission Deadline',
+						date: '2025-06-01',
+						detail: 'Extended submission window—final abstract deadline continuing from today.',
+						badge: 'Deadline'
+					},
+					{
+						title: 'Acceptance Notification',
+						date: '2025-06-10',
+						detail: 'Authors learn decisions and begin preparing camera-ready artifacts.',
+						badge: 'Decision'
+					},
+					{
+						title: 'Camera-ready & Registration',
+						date: '2025-06-15',
+						detail: 'Finalize camera-ready manuscripts and registration ahead of RSS.',
+						badge: 'Final'
+					},
+					{
+						title: 'Workshop Day',
+						date: '2025-06-21',
+						detail: 'In-person workshop at RSS 2025 (Room RTH 217).',
+						badge: 'Event'
+					},
+						{
+							title: 'Topical Collection Submission',
+							date: '2026-03-01',
+							detail: 'Submit to the Springer <em>Autonomous Robots</em> topical collection to align with the implicit-flight special issue.',
+							badge: 'Collection',
+							link: './topical/'
+						}
+				];
+
+				const grid = document.getElementById('important-dates-grid');
+				const currentDateEl = document.getElementById('current-date');
+				if (!grid || !currentDateEl) {
+					return;
+				}
+
+				const today = new Date();
+				currentDateEl.textContent = today.toLocaleDateString('en-US', {
+					month: 'long',
+					day: 'numeric',
+					year: 'numeric'
+				});
+
+				const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+				const futureDeadlines = deadlines
+					.map(item => ({ ...item, target: new Date(item.date) }))
+					.filter(item => item.target >= startOfToday)
+					.sort((a, b) => a.target - b.target);
+
+				const nextDeadline = futureDeadlines.length ? futureDeadlines[0].title : null;
+
+				const displayOrder = [...deadlines].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+				displayOrder.forEach(item => {
+					const target = new Date(item.date);
+					const targetLabel = target.toLocaleDateString('en-US', {
+						month: 'short',
+						day: 'numeric',
+						year: 'numeric'
+					});
+
+					const timeDiff = Math.floor((target - startOfToday) / (1000 * 60 * 60 * 24));
+					let statusText;
+					let statusClass = 'deadline-status-upcoming';
+					if (timeDiff > 1) {
+						statusText = `${timeDiff} days remaining`;
+					} else if (timeDiff === 1) {
+						statusText = '1 day remaining';
+					} else if (timeDiff === 0) {
+						statusText = 'Today';
+					} else {
+						statusText = `${Math.abs(timeDiff)} days ago`;
+						statusClass = 'deadline-status-past';
+					}
+
+					const card = document.createElement('article');
+					card.className = 'deadline-card';
+					if (item.title === nextDeadline) {
+						card.classList.add('deadline-card-highlight');
+					}
+
+					const blockContent = `
+						<div class="deadline-header">
+							<span class="deadline-badge">${item.badge}</span>
+							<span class="deadline-date">${targetLabel}</span>
+						</div>
+						<h4 class="deadline-title">${item.title}</h4>
+						<p class="${statusClass}">${statusText}</p>
+					`;
+
+					if (item.link) {
+						const linkWrapper = document.createElement('a');
+						linkWrapper.href = item.link;
+						linkWrapper.className = 'deadline-card-link';
+						linkWrapper.innerHTML = blockContent;
+						card.appendChild(linkWrapper);
+					} else {
+						card.innerHTML = blockContent;
+					}
+
+					grid.appendChild(card);
+				});
+			});
+		</script>
 
 
 				<div id="bodyContent1"></div>
@@ -169,7 +293,7 @@
 
 
 
-		<section id="Main-Part">
+		<section id="Main-Part" class="striped-section">
 			<div class="container custom-container-width">
 				<br>
 				<div class = "row">	
@@ -189,7 +313,7 @@
 
 		
 
-        <section id="Main-Part">
+        <section id="Main-Part" class="striped-section striped-alt">
 			<div class="container custom-container-width">
 				<br>
 				<div class = "row">	
