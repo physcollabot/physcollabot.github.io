@@ -45,28 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	document.querySelectorAll("[data-schedule-group]").forEach(group => {
-		const buttons = Array.from(group.querySelectorAll("[data-schedule-target]"));
-		const panels = Array.from(group.querySelectorAll("[data-schedule-panel]"));
-
-		const activatePanel = panelId => {
-			buttons.forEach(button => {
-				const isActive = button.dataset.scheduleTarget === panelId;
-				button.setAttribute("aria-pressed", String(isActive));
-			});
-
-			panels.forEach(panel => {
-				panel.hidden = panel.dataset.schedulePanel !== panelId;
-			});
-		};
-
-		buttons.forEach(button => {
-			button.addEventListener("click", () => activatePanel(button.dataset.scheduleTarget));
-		});
-
-		const defaultPanel = buttons.find(button => button.getAttribute("aria-pressed") === "true");
-		if (defaultPanel) {
-			activatePanel(defaultPanel.dataset.scheduleTarget);
-		}
-	});
 });
