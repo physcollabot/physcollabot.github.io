@@ -1,123 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <head>
-		<title>Program | RSS 2025 Workshop</title>
-		<link rel="icon" href="../img/logo.png" type="32x32">
-		<link rel="shortcut icon" href="../img/logo.png" type="16x16">
-	
-	    <!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-	
-	
-		<!-- Bootstrap CSS (v4.5.2) -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-		<!-- Google Fonts: Noto Sans -->
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-		<!-- Font Awesome (latest - version 6.5.0) -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-		<link rel="stylesheet" type="text/css" href="../style.css">		 
-    </head>
-
-
-
-    <body class="body_style">
-
-		<nav class="navbar navbar-expand-lg navbar-custom  bg-light fixed-top">
-			<img class="Logo" src="../img/logo.png" type="32x32"/>
-		
-			<img class="RSS_Logo" src="../img/RSS2025-logo-black.png", style="height: 40px; margin-left: 20px;"/>
-		
-
-			<button class="navbar-toggler border" type="button" 
-				data-toggle="collapse" data-target="#navbarNavDropdown" 
-				aria-controls="navbarNavDropdown" aria-expanded="false" 
-				aria-label="Toggle navigation">
-				<i class="fas fa-bars" style="color: #757575;"></i>
-				<span style="color: #757575;" >Menu</span>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Tentative speaker lineup and schedule for the proposed PhysCollaBot workshop at IROS 2026.">
+	<title>Program | PhysCollaBot</title>
+	<link rel="icon" href="../img/pcb-mark.svg" type="image/svg+xml">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Sora:wght@500;700&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg fixed-top site-nav">
+		<div class="site-shell">
+			<a class="navbar-brand brand-lockup" href="../index.html">
+				<img class="brand-mark" src="../img/pcb-mark.svg" alt="PhysCollaBot logo">
+				<span class="brand-copy">
+					<span class="brand-overline">IROS 2026 Workshop</span>
+					<span class="brand-title">PhysCollaBot</span>
+				</span>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
 			</button>
-		
-		
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="../">Home</a></li>
-					<li class="nav-item active"><a class="nav-link" href="../program/">Program</a></li>
-					<li class="nav-item active"><a class="nav-link" href="../call/">Call for Papers</a></li>
-					<li class="nav-item active"><a class="nav-link" href="../attend/">Attend</a></li>	
-						<li class="nav-item active"><a class="nav-link" href="../topical/">Topical Collection</a></li>
+			<div class="collapse navbar-collapse" id="siteNav">
+				<ul class="navbar-nav ml-auto align-items-lg-center">
+					<li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link active" href="index.html">Program</a></li>
+					<li class="nav-item"><a class="nav-link" href="../call/index.html">Call for Contributions</a></li>
+					<li class="nav-item"><a class="nav-link" href="../attend/index.html">Attend</a></li>
+					<li class="nav-item"><a class="nav-link" href="../organizers/index.html">Organizers</a></li>
 				</ul>
 			</div>
-		</nav>
-		
-		<section id="title" style="position: relative; overflow: hidden; min-height: 30vh;">
-			<!-- Background image -->
-			<!-- <img src="../img/background.png" 
-				 alt="Background"
-				 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: 
-				 cover; opacity: 0.97; z-index: -1;">
-		 -->
-			<!-- Spacer if needed -->
-			<div class="hero-spacer"></div>
-		
-			<!-- Foreground content -->
-			<div class="container custom-container-width position-relative" style="z-index: 1;">
-				<div class="row text-center my-5">
-					<div class="col-md-12">
-						<h1 class="workshop-title">
-							Program
-						</h1>
-						<br>
-						<p class="lead" style="color: #353030; "  >21 June 2025, Los Angeles, California, USA |  
-							<strong>
-								<a href="https://roboticsconference.org/attending/registration/" target="_blank"
-								style="text-decoration: none; color: inherit;"
-								onmouseover="this.style.color='#007bff';"
-								onmouseout="this.style.color='inherit';">
-								RSS 2025
-							</strong>  
-							</a>
-							Workshop | Room RTH 217
-						</p>
+		</div>
+	</nav>
+
+	<header class="hero page-hero">
+		<div class="site-shell hero-inner">
+			<div class="hero-grid">
+				<div class="hero-copy" data-reveal>
+					<p class="eyebrow">Program</p>
+					<h1 class="page-title">Invited talks, panels, and poster sessions</h1>
+					<p class="page-summary">
+						The workshop format is designed to maximize technical exchange. The current program reflects the proposal-stage invited lineup and both the full-day and half-day schedule options submitted to IROS 2026.
+					</p>
+					<div class="hero-meta">
+						<span class="meta-chip"><i class="fa-solid fa-user-group"></i> 7 invited speakers</span>
+						<span class="meta-chip"><i class="fa-solid fa-comments"></i> Dedicated panel discussions</span>
+						<span class="meta-chip"><i class="fa-regular fa-images"></i> Poster-driven interaction</span>
+					</div>
+				</div>
+				<aside class="hero-panel" data-reveal>
+					<span class="panel-tag">Program Notes</span>
+					<h2 class="panel-title">Two schedule formats are already scoped</h2>
+					<p class="panel-text">
+						The workshop proposal includes both a full-day structure and a half-day fallback, each with space for invited talks,
+						interactive posters, and panel discussion.
+					</p>
+					<div class="stat-grid">
+						<div class="stat-card">
+							<span class="stat-value">2</span>
+							<span class="stat-label">Schedule variants</span>
+						</div>
+						<div class="stat-card">
+							<span class="stat-value">Q&amp;A</span>
+							<span class="stat-label">After every invited talk</span>
+						</div>
+						<div class="stat-card">
+							<span class="stat-value">1-2</span>
+							<span class="stat-label">Poster sessions</span>
+						</div>
+						<div class="stat-card">
+							<span class="stat-value">2</span>
+							<span class="stat-label">Panel blocks in full-day format</span>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section">
+			<div class="site-shell">
+				<div class="section-header">
+					<div>
+						<p class="section-kicker">Invited Speakers</p>
+						<h2 class="section-title">Current invited lineup</h2>
+					</div>
+				</div>
+				<div class="speaker-grid">
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://imgx.tudelft.nl/x/sz=700,fit=contain,gravity=center,quality=85,name=media/person/4/c/c/8f8e54fb-50fe-4795-b76b-d3596dce6358.jpg" alt="Javier Alonso-Mora">
+						<div class="speaker-body">
+							<div class="speaker-role">Professor</div>
+							<h3 class="speaker-name"><a href="https://www.alonsomora.com/" target="_blank" rel="noreferrer">Javier Alonso-Mora</a></h3>
+							<p class="speaker-affiliation">Delft University of Technology<br>Co-chair, IEEE RAS TC on Multi-Robot Systems</p>
+							<p class="speaker-talk">Tentatively remote. Title to be announced.</p>
+							<span class="speaker-note">Proposal-stage status</span>
+						</div>
+					</article>
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://mengguo.github.io/personal_site/img/profile.jpg" alt="Meng Guo">
+						<div class="speaker-body">
+							<div class="speaker-role">Assistant Professor</div>
+							<h3 class="speaker-name"><a href="https://mengguo.github.io/personal_site/" target="_blank" rel="noreferrer">Meng Guo</a></h3>
+							<p class="speaker-affiliation">Peking University</p>
+							<p class="speaker-talk">Neural-accelerated Task and Motion Planning for Multi-robot Systems</p>
+						</div>
+					</article>
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://kavrakilab.rice.edu/sites/g/files/bxs5376/files/styles/inset_image/public/2019-07/lydia%20kavraki.jpg?itok=3Kbyu7Gp" alt="Lydia Kavraki">
+						<div class="speaker-body">
+							<div class="speaker-role">Professor</div>
+							<h3 class="speaker-name"><a href="https://www.kavrakilab.org/" target="_blank" rel="noreferrer">Lydia Kavraki</a></h3>
+							<p class="speaker-affiliation">Rice University</p>
+							<p class="speaker-talk">Efficient Motion Planning for Manifold-Constrained Multi-Robot Manipulators</p>
+						</div>
+					</article>
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://www.ri.cmu.edu/app/uploads/2024/08/IMG_3427-600x630.jpg" alt="Jiaoyang Li">
+						<div class="speaker-body">
+							<div class="speaker-role">Assistant Professor</div>
+							<h3 class="speaker-name"><a href="https://jiaoyangli.me/" target="_blank" rel="noreferrer">Jiaoyang Li</a></h3>
+							<p class="speaker-affiliation">Carnegie Mellon University</p>
+							<p class="speaker-talk">Scalable Planning and Asynchronous Execution for Long-Horizon Multi-Robot Manipulation</p>
+						</div>
+					</article>
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://robotics.umich.edu/wp-content/uploads/2023/01/Christoforos_Mavrogiannis.jpg" alt="Christoforos Mavrogiannis">
+						<div class="speaker-body">
+							<div class="speaker-role">Assistant Professor</div>
+							<h3 class="speaker-name"><a href="https://robotics.umich.edu/people/faculty/christoforos-mavrogiannis/" target="_blank" rel="noreferrer">Christoforos Mavrogiannis</a></h3>
+							<p class="speaker-affiliation">University of Michigan, Ann Arbor</p>
+							<p class="speaker-talk">Towards Site Preparation with Multi-Robot Teams</p>
+						</div>
+					</article>
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://www.arscontrol.unimore.it/wp-content/uploads/2023/10/lorenzo.jpg" alt="Lorenzo Sabattini">
+						<div class="speaker-body">
+							<div class="speaker-role">Associate Professor</div>
+							<h3 class="speaker-name"><a href="https://www.arscontrol.unimore.it/lorenzo-sabattini/" target="_blank" rel="noreferrer">Lorenzo Sabattini</a></h3>
+							<p class="speaker-affiliation">University of Modena and Reggio Emilia<br>Emeritus chair, IEEE RAS TC on Multi-Robot Systems</p>
+							<p class="speaker-talk">Tentative: Human-aware Distributed Control of Multi-Robot Systems</p>
+						</div>
+					</article>
+					<article class="speaker-card" data-reveal>
+						<img class="speaker-photo" src="https://cde.nus.edu.sg/wp-content/uploads/me-GUILLAUME-A.-SARTORETTI-400x500.jpg" alt="Guillaume Sartoretti">
+						<div class="speaker-body">
+							<div class="speaker-role">Assistant Professor</div>
+							<h3 class="speaker-name"><a href="https://cde.nus.edu.sg/me/staff/sartoretti-guillaume-a/" target="_blank" rel="noreferrer">Guillaume A. Sartoretti</a></h3>
+							<p class="speaker-affiliation">National University of Singapore</p>
+							<p class="speaker-talk">High-dimensional Multi-agent Robot Learning</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section-alt">
+			<div class="site-shell" data-schedule-group>
+				<div class="section-header">
+					<div>
+						<p class="section-kicker">Tentative Schedule</p>
+						<h2 class="section-title">Submitted in both full-day and half-day forms</h2>
+					</div>
+					<div class="schedule-switch" data-reveal>
+						<button class="schedule-button" type="button" data-schedule-target="full-day" aria-pressed="true">Full day</button>
+						<button class="schedule-button" type="button" data-schedule-target="half-day" aria-pressed="false">Half day</button>
+					</div>
+				</div>
+
+				<div class="schedule-panel" data-schedule-panel="full-day">
+					<div class="schedule-table" data-reveal>
+						<div class="schedule-table-head">
+							<span>Time</span>
+							<span>Event</span>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">08:30-08:45</div>
+							<div><span class="schedule-event-title">Welcome + Intro</span><span class="schedule-event-note">Opening remarks from the organizers.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">08:45-10:00</div>
+							<div><span class="schedule-event-title">Invited Talks</span><span class="schedule-event-note">Morning invited speaker block.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">10:00-11:00</div>
+							<div><span class="schedule-event-title">Poster Session + Coffee Break</span><span class="schedule-event-note">Interactive session for accepted contributions.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">11:00-12:00</div>
+							<div><span class="schedule-event-title">Panel Discussion 1</span><span class="schedule-event-note">Open problems in contact-rich, tightly coupled collaboration.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">12:00-13:30</div>
+							<div><span class="schedule-event-title">Lunch Break</span><span class="schedule-event-note">Informal networking and poster follow-up.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">13:30-14:45</div>
+							<div><span class="schedule-event-title">Invited Talks</span><span class="schedule-event-note">Afternoon invited speaker block.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">14:45-16:00</div>
+							<div><span class="schedule-event-title">Panel Discussion 2</span><span class="schedule-event-note">Scaling learning and embodied intelligence to multi-robot teams.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">16:00-17:00</div>
+							<div><span class="schedule-event-title">Poster Session + Coffee Break</span><span class="schedule-event-note">Second interactive poster block.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">17:00-17:30</div>
+							<div><span class="schedule-event-title">Best Poster Announcement + Closing</span><span class="schedule-event-note">Concluding remarks and award recognition.</span></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="schedule-panel" data-schedule-panel="half-day" hidden>
+					<div class="schedule-table" data-reveal>
+						<div class="schedule-table-head">
+							<span>Time</span>
+							<span>Event</span>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">08:30-08:40</div>
+							<div><span class="schedule-event-title">Welcome + Intro</span><span class="schedule-event-note">Workshop framing by the organizers.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">08:40-09:40</div>
+							<div><span class="schedule-event-title">Invited Talks</span><span class="schedule-event-note">Condensed invited speaker block.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">09:40-10:10</div>
+							<div><span class="schedule-event-title">Poster Session</span><span class="schedule-event-note">Spotlight-style poster interaction for accepted contributions.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">10:10-10:30</div>
+							<div><span class="schedule-event-title">Panel Discussion</span><span class="schedule-event-note">Focused discussion on tightly coupled collaboration.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">10:30-11:00</div>
+							<div><span class="schedule-event-title">Morning Coffee Break</span><span class="schedule-event-note">Networking break.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">11:00-11:45</div>
+							<div><span class="schedule-event-title">Invited Talks</span><span class="schedule-event-note">Second invited speaker block.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">11:45-12:15</div>
+							<div><span class="schedule-event-title">Poster Session</span><span class="schedule-event-note">Final poster interaction window.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">12:15-12:30</div>
+							<div><span class="schedule-event-title">Best Poster Announcement + Concluding Remarks</span><span class="schedule-event-note">Wrap-up and recognition.</span></div>
+						</div>
+						<div class="schedule-row">
+							<div class="schedule-time">12:30</div>
+							<div><span class="schedule-event-title">End</span><span class="schedule-event-note">Half-day workshop concludes.</span></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		
-			<!-- Spacer if needed -->
-			<br><br>
 		</section>
-		
-		<div id="bodyContent"></div>
-	
-		<script>
-			// Load body-content.html into the div
-			fetch("content.html")
-			.then(response => response.text())
-			.then(data => {
-				document.getElementById("bodyContent").innerHTML = data;
-			})
-			.catch(error => console.log("Error loading the content: ", error));
-		</script>
 
-        <br><br>
+		<section class="section">
+			<div class="site-shell">
+				<div class="section-header">
+					<div>
+						<p class="section-kicker">Discussion Themes</p>
+						<h2 class="section-title">Panels are structured around concrete technical pressure points</h2>
+					</div>
+				</div>
+				<div class="card-grid">
+					<article class="detail-card" data-reveal>
+						<div class="card-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+						<h3 class="card-title">Modeling and abstraction</h3>
+						<p class="card-text">How should teams model shared loads, contacts, and constraints without losing deployability or computational efficiency?</p>
+					</article>
+					<article class="detail-card" data-reveal>
+						<div class="card-icon"><i class="fa-solid fa-route"></i></div>
+						<h3 class="card-title">Long-horizon coordination</h3>
+						<p class="card-text">What planning structures are needed when manipulation, sequencing, resource conflicts, and execution interact over long horizons?</p>
+					</article>
+					<article class="detail-card" data-reveal>
+						<div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+						<h3 class="card-title">Learning for physical collaboration</h3>
+						<p class="card-text">Where can modern data-driven methods help, and what kinds of demonstrations, benchmarks, or sim-to-real pipelines are missing?</p>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
 
+	<footer class="site-footer">
+		<div class="site-shell footer-inner">
+			<p class="footer-note">Program details reflect the current proposal-stage workshop submission and remain subject to final conference scheduling.</p>
+			<div class="person-links">
+				<a class="micro-link" href="../call/index.html">Call for contributions</a>
+				<a class="micro-link" href="../attend/index.html">Attend</a>
+				<a class="micro-link" href="mailto:jliu3103@gatech.edu">Contact organizer</a>
+			</div>
+		</div>
+	</footer>
 
-		<!-- jQuery (slim version for Bootstrap 4) -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-		<!-- Popper.js (needed for dropdowns/tooltips in Bootstrap 4) -->
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-				crossorigin="anonymous"></script>
-
-		<!-- Bootstrap JS Bundle -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-	</body>
-
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../script.js"></script>
+</body>
 </html>
