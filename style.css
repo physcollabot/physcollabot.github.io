@@ -171,6 +171,14 @@ a:hover {
 	top: -4rem;
 }
 
+.page-hero .hero-grid {
+	align-items: start;
+}
+
+.page-hero .hero-panel {
+	margin-top: 0.85rem;
+}
+
 .hero-inner {
 	position: relative;
 	z-index: 1;
@@ -763,6 +771,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	object-position: center top;
 }
 
 .avatar-initials {
@@ -799,6 +808,11 @@ a:hover {
 	font-size: 0.72rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
+}
+
+.email-link {
+	text-transform: none !important;
+	letter-spacing: 0.02em !important;
 }
 
 .pill-row {
@@ -908,6 +922,22 @@ a:hover {
 
 .footer-note {
 	font-size: 0.95rem;
+}
+
+.site-footer .person-links {
+	gap: 0.3rem 0.55rem;
+}
+
+.site-footer .person-links .micro-link + .micro-link {
+	position: relative;
+	padding-left: 1rem;
+}
+
+.site-footer .person-links .micro-link + .micro-link::before {
+	content: "-";
+	position: absolute;
+	left: 0;
+	color: var(--ink-600);
 }
 
 [data-reveal] {
