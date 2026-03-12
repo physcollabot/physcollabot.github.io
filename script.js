@@ -19,10 +19,33 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		const navMenu = document.getElementById("siteNav");
+		const navToggle = nav.querySelector(".navbar-toggler");
+		const isMobileNav = () => navToggle && window.getComputedStyle(navToggle).display !== "none";
+		const syncNavState = () => {
+			const isExpanded = Boolean(navToggle && navToggle.getAttribute("aria-expanded") === "true" && isMobileNav());
+			document.body.classList.toggle("nav-is-open", isExpanded);
+			updateNavOffset();
+		};
+
 		if (navMenu) {
-			navMenu.addEventListener("shown.bs.collapse", updateNavOffset);
-			navMenu.addEventListener("hidden.bs.collapse", updateNavOffset);
+			navMenu.addEventListener("shown.bs.collapse", syncNavState);
+			navMenu.addEventListener("hidden.bs.collapse", syncNavState);
+
+			navMenu.querySelectorAll(".nav-link").forEach(link => {
+				link.addEventListener("click", () => {
+					if (!isMobileNav() || !navMenu.classList.contains("show")) {
+						return;
+					}
+
+					if (window.jQuery) {
+						window.jQuery(navMenu).collapse("hide");
+					}
+				});
+			});
 		}
+
+		window.addEventListener("resize", syncNavState);
+		syncNavState();
 	}
 
 	const revealItems = Array.from(document.querySelectorAll("[data-reveal]"));

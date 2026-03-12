@@ -76,6 +76,10 @@ a:hover {
 .site-nav .site-shell {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	min-width: 0;
 }
 
 .brand-lockup {
@@ -84,6 +88,8 @@ a:hover {
 	gap: 0.9rem;
 	padding: 0;
 	min-width: 0;
+	flex: 1 1 auto;
+	max-width: 100%;
 }
 
 .brand-mark {
@@ -98,6 +104,7 @@ a:hover {
 	flex-direction: column;
 	line-height: 1.05;
 	min-width: 0;
+	overflow: hidden;
 }
 
 .brand-overline {
@@ -106,6 +113,9 @@ a:hover {
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
 	color: var(--ink-700);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .brand-title {
@@ -113,10 +123,17 @@ a:hover {
 	font-size: 1.08rem;
 	font-weight: 700;
 	color: var(--ink-950);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .site-nav .navbar-nav {
 	gap: 0.3rem;
+}
+
+.site-nav .navbar-collapse {
+	min-width: 0;
 }
 
 .site-nav .nav-link {
@@ -128,6 +145,9 @@ a:hover {
 	color: var(--ink-700);
 	padding: 0.75rem 0.9rem !important;
 	border-radius: 999px;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
 }
 
 .site-nav .nav-link:hover,
@@ -141,6 +161,20 @@ a:hover {
 	padding: 0.45rem 0.7rem;
 	border-radius: 14px;
 	color: var(--ink-900);
+	margin-left: auto;
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav .navbar-toggler:hover,
+.site-nav .navbar-toggler:focus {
+	background: rgba(16, 32, 51, 0.06);
+	border-color: rgba(16, 32, 51, 0.22);
+	box-shadow: 0 0 0 3px rgba(31, 122, 120, 0.14);
+	outline: none;
 }
 
 .hero {
@@ -998,14 +1032,23 @@ a:hover {
 	}
 
 	.site-nav .navbar-collapse {
+		flex-basis: 100%;
 		width: 100%;
-		margin-top: 0.8rem;
-		padding: 0.6rem 0 0.2rem;
+		margin-top: 0.35rem;
+		padding: 0.45rem;
+		border-radius: 20px;
+		background: rgba(252, 250, 245, 0.98);
+		border: 1px solid rgba(16, 32, 51, 0.08);
+		box-shadow: var(--shadow-soft);
+		max-height: calc(100vh - var(--nav-height) - 1rem);
+		overflow-y: auto;
+		overscroll-behavior: contain;
 	}
 
 	.site-nav .navbar-nav {
 		align-items: flex-start !important;
 		width: 100%;
+		gap: 0.35rem;
 	}
 
 	.site-nav .nav-item,
@@ -1014,7 +1057,7 @@ a:hover {
 	}
 
 	.site-nav .nav-link {
-		padding-inline: 1rem !important;
+		padding: 0.9rem 1rem !important;
 	}
 
 	.theme-list {
@@ -1023,6 +1066,10 @@ a:hover {
 
 	.footer-inner {
 		align-items: flex-start;
+	}
+
+	body.nav-is-open {
+		overflow: hidden;
 	}
 }
 
@@ -1061,6 +1108,10 @@ a:hover {
 		margin: 1.2rem 0;
 	}
 
+	.section-header {
+		align-items: flex-start;
+	}
+
 	.meta-chip {
 		width: 100%;
 		justify-content: flex-start;
@@ -1084,11 +1135,24 @@ a:hover {
 	.organizer-grid,
 	.timeline-item,
 	.agenda-item,
-	.schedule-table-head,
 	.schedule-row,
-	.schedule-table.compact .schedule-table-head,
 	.schedule-table.compact .schedule-row {
 		grid-template-columns: 1fr;
+	}
+
+	.schedule-table-head,
+	.schedule-table.compact .schedule-table-head {
+		display: none;
+	}
+
+	.schedule-row,
+	.schedule-table.compact .schedule-row {
+		gap: 0.4rem;
+		padding: 0.95rem 1rem;
+	}
+
+	.schedule-time {
+		margin-bottom: 0.1rem;
 	}
 
 	.organizer-card {
@@ -1163,9 +1227,30 @@ a:hover {
 		height: 82px;
 		flex-basis: 82px;
 	}
+
+	.site-nav .navbar-collapse {
+		padding: 0.35rem;
+		border-radius: 18px;
+	}
 }
 
 @media (max-width: 420px) {
+	.brand-lockup {
+		gap: 0.65rem;
+	}
+
+	.brand-overline {
+		display: none;
+	}
+
+	.brand-title {
+		font-size: 0.96rem;
+	}
+
+	.site-nav .navbar-toggler {
+		padding: 0.4rem 0.62rem;
+	}
+
 	.hero-title {
 		font-size: clamp(2.2rem, 10vw, 2.8rem);
 	}
@@ -1177,6 +1262,11 @@ a:hover {
 	.button-link,
 	.meta-chip {
 		font-size: 0.72rem;
+	}
+
+	.site-nav .nav-link {
+		font-size: 0.76rem;
+		letter-spacing: 0.06em;
 	}
 
 	.section-title {
