@@ -238,6 +238,14 @@ a:hover {
 	grid-template-columns: 1fr;
 }
 
+.hero:not(.page-hero) .hero-title {
+	max-width: none;
+}
+
+.hero:not(.page-hero) .hero-summary {
+	max-width: none;
+}
+
 .hero-copy {
 	color: rgba(255, 255, 255, 0.94);
 	min-width: 0;
