@@ -234,6 +234,10 @@ a:hover {
 	align-items: center;
 }
 
+.hero:not(.page-hero) .hero-grid {
+	grid-template-columns: 1fr;
+}
+
 .hero-copy {
 	color: rgba(255, 255, 255, 0.94);
 	min-width: 0;
