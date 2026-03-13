@@ -45,8 +45,8 @@
 					<p class="eyebrow">IROS 2026 Workshop</p>
 					<h1 class="hero-title">Tightly Coupled Physical Collaboration in Multi-Robot Systems</h1>
 					<p class="hero-summary">
-						PhysCollaBot brings together researchers in control, planning, task and motion planning, and robot learning to push
-						multi-robot research beyond loosely coupled coordination and toward physically grounded collaboration in the real world.
+						PhysCollaBot brings together researchers in control, motion planning, task and motion planning, and robot learning
+						to shift the focus of multi-robot research from loosely coupled coordination toward physically grounded, tightly coupled collaboration.
 					</p>
 					<div class="hero-meta">
 						<span class="meta-chip"><i class="fa-solid fa-location-dot"></i> Pittsburgh, Pennsylvania, USA</span>
@@ -63,7 +63,7 @@
 						<span class="panel-tag">Workshop Highlight</span>
 						<h2 class="panel-title">When multiple robots coordinate through physical interaction</h2>
 						<p class="panel-text">
-							The workshop focuses on tasks where robots are coupled through shared objects, contact, and long-horizon task dependencies rather than treated as largely independent agents.
+							The workshop focuses on tasks where robots are coupled through shared physical interactions with objects, the environment, or each other, such that the motions or forces of one robot constrain the actions of the others.
 						</p>
 						<div class="portrait-strip portrait-strip-all-speakers" aria-label="Invited speakers">
 							<img src="img/speakers/Javier-Alonso-Mora.jpg" alt="Javier Alonso-Mora">
@@ -101,29 +101,29 @@
 				<div class="split-grid">
 					<div class="copy-stack" data-reveal>
 						<p>
-							Robots are moving beyond controlled laboratory setups toward collaborative construction, cooperative manufacturing,
-							and embodied logistics. In those settings, many tasks require more than coordination: they require teams of robots to
-							couple through objects, contacts, shared loads, and the environment itself.
+							As robots increasingly move beyond controlled laboratory settings, emerging applications—such as collaborative
+							construction and cooperative transportation—require capabilities that exceed those of a single robot. These tasks
+							naturally motivate the use of multiple robots that must physically coordinate their actions.
 						</p>
 						<p>
-							Most multi-robot research still assumes loosely coupled planning problems where agents can be optimized largely
-							independently. PhysCollaBot focuses on the opposite regime. We want to highlight methods that reason jointly about
-							force, contact, task dependencies, and execution constraints, while bridging model-based structure with the scalability
-							of learning-based systems.
+							Most existing multi-robot research has focused on loosely coupled coordination problems, where robots can be
+							planned largely independently. PhysCollaBot addresses the opposite regime—physically collaborative tasks that
+							require robots to reason jointly about contact interactions, shared physical constraints, and long-horizon task
+							dependencies—while bridging model-based and learning-based coordination.
 						</p>
 						<p>
-							Across invited talks, poster presentations, and panel discussion, the workshop focuses on methods that can support
-							real teams of robots acting together in the physical world.
+							Through invited talks, peer-reviewed contributions, and panel discussions, the workshop seeks to help define the
+							next research frontier for real-world multi-robot collaboration.
 						</p>
 					</div>
 					<div class="detail-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
 						<h3 class="card-title">What to expect</h3>
 						<ul class="card-list">
-							<li>Bridge control, planning, task and motion planning, and robot learning communities.</li>
-							<li>Surface practical abstractions for contact-rich, tightly coupled collaboration.</li>
-							<li>Discuss long-horizon dependencies in construction, assembly, and shared manipulation.</li>
-							<li>Connect recent single-robot embodied intelligence advances to multi-robot settings.</li>
+							<li>Bridge control, motion planning, task and motion planning, and robot learning communities.</li>
+							<li>Identify new abstractions, algorithmic principles, and learning paradigms for tightly coupled collaboration.</li>
+							<li>Address long-horizon task dependencies in collaborative transportation, construction, and manufacturing.</li>
+							<li>Integrate single-robot intelligence into multi-robot systems.</li>
 						</ul>
 					</div>
 				</div>
@@ -138,29 +138,29 @@
 						<h2 class="section-title">Three challenges define the agenda</h2>
 					</div>
 					<p class="section-lead">
-						The workshop is organized around the bottlenecks that repeatedly show up when multi-robot systems move from abstract coordination to physical collaboration.
+						We outline several key challenges that currently limit the development of methods for tightly coupled physical collaboration.
 					</p>
 				</div>
 				<div class="card-grid">
 					<article class="info-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-link"></i></div>
-						<h3 class="card-title">Reasoning over physical interaction</h3>
+						<h3 class="card-title">Efficient reasoning models for physical interaction</h3>
 						<p class="card-text">
-							Teams must reason about contact, load sharing, and mutual constraints without collapsing into models that are too coarse for deployment or too expensive for planning.
+							Robots must reason about complex physical interactions with the environment and with one another, yet overly simplified models fail in practice while high-fidelity models are too expensive for planning and control.
 						</p>
 					</article>
 					<article class="info-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-timeline"></i></div>
 						<h3 class="card-title">Long-horizon task dependencies</h3>
 						<p class="card-text">
-							Collective transport, construction, and assembly require temporal reasoning, resource coupling, and execution-aware planning over large makespans.
+							Real-world tasks require reasoning about temporal dependencies, shared resources, and coupled motion constraints. Existing approaches often suffer from the curse of dimensionality or simplify task structure, limiting their ability to handle rich, interdependent objectives.
 						</p>
 					</article>
 					<article class="info-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-						<h3 class="card-title">Scaling embodied intelligence to teams</h3>
+						<h3 class="card-title">Scaling single-robot intelligence to multi-robot collaboration</h3>
 						<p class="card-text">
-							Data-efficient methods, role allocation, and coordinated adaptation remain open problems when capabilities learned for one robot must scale to multi-robot collaboration.
+							Coordinated demonstrations are costly to obtain, making training data scarce for multi-robot teams. Meanwhile, teams must handle far greater task diversity, requiring coordination, role assignment, and adaptation to changing environments.
 						</p>
 					</article>
 				</div>
@@ -254,17 +254,17 @@
 							<article class="detail-card">
 								<div class="card-icon"><i class="fa-solid fa-microphone"></i></div>
 								<h3 class="card-title">Invited talks with dedicated Q&amp;A</h3>
-								<p class="card-text">Speakers from planning, control, and learning will anchor the day with complementary perspectives on physical collaboration.</p>
+								<p class="card-text">Researchers from diverse backgrounds, career stages, and research communities will present complementary perspectives aligned with the workshop theme, each followed by a dedicated Q&amp;A.</p>
 							</article>
 							<article class="detail-card">
 								<div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
 								<h3 class="card-title">Moderated panels</h3>
-								<p class="card-text">Open challenges, benchmarks, abstractions, and deployment constraints will be surfaced in structured panel discussions.</p>
+								<p class="card-text">Researchers from diverse backgrounds and career stages will discuss open challenges to encourage diffusion of ideas and spark new insights.</p>
 							</article>
 							<article class="detail-card">
 								<div class="card-icon"><i class="fa-regular fa-images"></i></div>
 								<h3 class="card-title">Interactive poster sessions</h3>
-								<p class="card-text">Accepted abstracts will be highlighted in poster sessions designed to maximize exchange rather than just presentation.</p>
+								<p class="card-text">Each accepted poster will be briefly introduced by its presenter, followed by interactive discussions to engage attendees.</p>
 							</article>
 						</div>
 					</div>
@@ -277,40 +277,40 @@
 								<span>Event</span>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">08:30-08:45</div>
+								<div class="schedule-time">08:30-08:40</div>
 								<div><span class="schedule-event-title">Welcome + Intro</span><span class="schedule-event-note">Opening remarks by the organizers.</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">08:45-10:00</div>
+								<div class="schedule-time">08:40-10:10</div>
 								<div><span class="schedule-event-title">Invited Talks</span><span class="schedule-event-note">Morning invited speaker block.</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">10:00-11:00</div>
-								<div><span class="schedule-event-title">Poster Session + Coffee</span><span class="schedule-event-note">Interactive poster discussions.</span></div>
+								<div class="schedule-time">10:10-11:10</div>
+								<div><span class="schedule-event-title">Poster Session + Coffee</span><span class="schedule-event-note">Morning coffee break and interactive poster discussions.</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">11:00-12:00</div>
-								<div><span class="schedule-event-title">Panel Discussion 1</span><span class="schedule-event-note">Open challenges in contact-rich, tightly coupled collaboration.</span></div>
+								<div class="schedule-time">11:10-12:10</div>
+								<div><span class="schedule-event-title">Panel Discussion 1</span></div>
 							</div>
 							<div class="schedule-row">
 								<div class="schedule-time">12:00-13:30</div>
-								<div><span class="schedule-event-title">Lunch Break</span><span class="schedule-event-note">Networking and poster follow-up.</span></div>
+								<div><span class="schedule-event-title">Lunch Break</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">13:30-14:45</div>
+								<div class="schedule-time">13:30-15:30</div>
 								<div><span class="schedule-event-title">Invited Talks</span><span class="schedule-event-note">Afternoon invited speaker block.</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">14:45-16:00</div>
-								<div><span class="schedule-event-title">Panel Discussion 2</span><span class="schedule-event-note">Scaling learning and embodied intelligence to multi-robot teams.</span></div>
+								<div class="schedule-time">15:30-16:20</div>
+								<div><span class="schedule-event-title">Poster Session + Coffee</span><span class="schedule-event-note">Afternoon coffee break and interactive poster discussions.</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">16:00-17:00</div>
-								<div><span class="schedule-event-title">Poster Session + Coffee</span><span class="schedule-event-note">Second interactive poster block.</span></div>
+								<div class="schedule-time">16:20-17:20</div>
+								<div><span class="schedule-event-title">Panel Discussion 2</span></div>
 							</div>
 							<div class="schedule-row">
-								<div class="schedule-time">17:00-17:30</div>
-								<div><span class="schedule-event-title">Best Poster + Closing</span><span class="schedule-event-note">Concluding remarks and award recognition.</span></div>
+								<div class="schedule-time">17:20-17:30</div>
+								<div><span class="schedule-event-title">Best Poster + Closing</span><span class="schedule-event-note">Concluding remarks and award announcement.</span></div>
 							</div>
 						</div>
 						<p class="schedule-note"><a href="program/index.html">See the full program page for the complete schedule and invited speaker lineup.</a></p>
@@ -332,8 +332,8 @@
 						<div class="card-icon"><i class="fa-solid fa-file-circle-plus"></i></div>
 						<h3 class="card-title">Extended abstracts and posters</h3>
 						<p class="card-text">
-								We invite 2-4 page extended abstracts on collaborative manipulation, task allocation, task and motion planning,
-								learning-based coordination, sim-to-real transfer, NAMO, and related embodied multi-robot problems.
+								We invite 2-4 page extended abstracts (including references) targeting state-of-the-art research on tightly coupled
+								physical collaboration in multi-robot systems, formatted following IROS guidelines.
 						</p>
 						<div class="pill-row" style="margin-top: 1rem;">
 							<span class="topic-pill">Collaborative manipulation</span>
@@ -348,7 +348,7 @@
 							<h3 class="card-title">Who should attend</h3>
 							<p class="card-text">
 								Researchers and practitioners in multi-robot systems, motion planning, task and motion planning, robot learning,
-								whole-body control, and embodied AI who want a workshop centered on technical exchange, poster interaction, and panel discussion.
+								whole-body control, and embodied AI.
 							</p>
 							<div class="button-row">
 								<a class="button-link secondary" href="attend/index.html"><i class="fa-solid fa-users"></i> Audience and venue</a>
