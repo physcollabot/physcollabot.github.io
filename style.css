@@ -163,7 +163,7 @@ a:hover {
 	color: var(--ink-900);
 	margin-left: auto;
 	flex: 0 0 auto;
-	display: inline-flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -1020,6 +1020,10 @@ a:hover {
 @media (max-width: 991px) {
 	body {
 		padding-top: var(--nav-height);
+	}
+
+	.site-nav .navbar-toggler {
+		display: inline-flex;
 	}
 
 	.site-shell {
