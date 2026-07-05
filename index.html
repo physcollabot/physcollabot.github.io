@@ -8,7 +8,7 @@
 	<link rel="icon" href="img/pcb-mark.svg" type="image/svg+xml">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Sora:wght@500;700&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<link rel="stylesheet" href="style.css">
@@ -18,6 +18,7 @@
 		<div class="site-shell">
 			<a class="navbar-brand brand-lockup" href="index.html">
 				<img class="brand-mark" src="img/pcb-mark.svg" alt="PhysCollaBot logo">
+				<img class="nav-event-badge" src="img/iros.png" alt="IROS 2026 Pittsburgh">
 				<span class="brand-copy">
 					<span class="brand-overline">IROS 2026 Workshop</span>
 					<span class="brand-title">PhysCollaBot</span>
@@ -42,15 +43,17 @@
 		<div class="site-shell hero-inner">
 			<div class="hero-grid">
 				<div class="hero-copy" data-reveal>
-					<p class="eyebrow">IROS 2026 Workshop</p>
-					<h2 class="hero-title">Tightly Coupled Physical Collaboration in Multi-Robot Systems</h2>
-					<p class="hero-summary">
+					<p>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026</p>
+					<h1 class="hero-title">Tightly Coupled Physical Collaboration in Multi-Robot Systems</h1>
+					<!-- <p class="hero-summary">
 						This workshop aims to bring together researchers in control, motion planning, task and motion planning, and robot learning
 						to shift the focus of multi-robot research from loosely coupled coordination toward physically grounded, tightly coupled collaboration.
-					</p>
+					</p> -->
 					<div class="hero-meta">
-						<span class="meta-chip"><i class="fa-solid fa-location-dot"></i> Pittsburgh, Pennsylvania, USA</span>
-						<span class="meta-chip"><i class="fa-regular fa-calendar"></i> Workshops on September 27 or October 1, 2026</span>
+						<span class="meta-chip"><i class="fa-solid fa-location-dot"></i> 
+							Pittsburgh, Pennsylvania, USA</span>
+						<span class="meta-chip"><i class="fa-regular fa-calendar"></i> 
+							1:00 - 5:30 PM, September 27, 2026</span>
 					</div>
 				</div>
 			</div>
@@ -60,26 +63,27 @@
 	<main>
 		<section class="section">
 			<div class="site-shell">
-				<div class="section-header">
+				<!-- <div class="section-header">
 					<div>
 						<h2 class="section-title">Workshop Theme</h2>
 					</div>
-				</div>
+				</div> -->
 				<div class="copy-stack" data-reveal>
 					<p>
-						As robots increasingly move beyond controlled laboratory settings, emerging applications—such as collaborative
-						construction and cooperative transportation—require capabilities that exceed those of a single robot. These tasks
-						naturally motivate the use of multiple robots that must physically coordinate their actions.
+Recent advances in robot control, perception, planning, and learning have significantly expanded the capabilities of individual robots to operate in unstructured environments and interact with the physical world. 
+As robots move beyond controlled laboratory settings toward real-world deployment, many emerging applications, such as collaborative construction, cooperative manufacturing, and embodied logistics, 
+naturally require <b>multiple robots to coordinate through physical interactions</b>. 
+However, despite growing practical demand, research to enable tightly coupled physical collaboration in multi-robot systems remains underexplored.
 					</p>
 					<p>
-						Most existing multi-robot research has focused on loosely coupled coordination problems, where robots can be
-						planned largely independently. PhysCollaBot addresses the opposite regime—physically collaborative tasks that
-						require robots to reason jointly about contact interactions, shared physical constraints, and long-horizon task
-						dependencies—while bridging model-based and learning-based coordination.
+Most existing multi-robot research has focused on <b>loosely coupled coordination problems</b>, where robots can be planned largely independently. 
+In contrast, physically collaborative tasks require robots to reason jointly about contact interactions, shared physical constraints, and long-horizon task dependencies, which introduce significant challenges in modeling and computation. 
+Developing coordination methods for physical collaboration will therefore require the community to revisit many of the foundational assumptions underlying multi-robot systems. 
 					</p>
 					<p>
-						Through invited talks, peer-reviewed contributions, and panel discussions, the workshop seeks to help define the
-						next research frontier for real-world multi-robot collaboration.
+This workshop aims to shift the focus of the multi-robot systems community from scalable but loosely coupled coordination toward <b>physically grounded, tightly coupled collaboration</b>. 
+By bringing together researchers from control, motion planning, task and motion planning, and robot learning, the workshop will highlight emerging methods that bridge model-based and learning-based coordination,  address long-horizon task dependencies, and integrate single-robot intelligence into multi-robot systems. 
+Through invited talks, peer-reviewed contributions, and panel discussions, the workshop seeks to help define the next research frontier for real-world deployment of multi-robot collaboration. 
 					</p>
 				</div>
 			</div>
@@ -89,27 +93,27 @@
 			<div class="site-shell">
 				<div class="section-header">
 					<div>
-						<h2 class="section-title">Core Questions</h2>
+						<h2 class="section-title">Core Challenges</h2>
 					</div>
 				</div>
 				<div class="card-grid">
 					<article class="info-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-link"></i></div>
-						<h3 class="card-title">Efficient reasoning models for physical interaction</h3>
+						<h3 class="card-title">Efficient reasoning model of physical collaboration</h3>
 						<p class="card-text">
 							Robots must reason about complex physical interactions with the environment and with one another, yet overly simplified models fail in practice while high-fidelity models are too expensive for planning and control.
 						</p>
 					</article>
 					<article class="info-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-timeline"></i></div>
-						<h3 class="card-title">Long-horizon task dependencies</h3>
+						<h3 class="card-title">Long-horizon Task Complexity and Dependency</h3>
 						<p class="card-text">
 							Real-world tasks require reasoning about temporal dependencies, shared resources, and coupled motion constraints. Existing approaches often suffer from the curse of dimensionality or simplify task structure, limiting their ability to handle rich, interdependent objectives.
 						</p>
 					</article>
 					<article class="info-card" data-reveal>
 						<div class="card-icon"><i class="fa-solid fa-brain"></i></div>
-						<h3 class="card-title">Scaling single-robot intelligence to multi-robot collaboration</h3>
+						<h3 class="card-title">Scale Single-Robot Intelligence to Multi-Robot Collaboration</h3>
 						<p class="card-text">
 							Coordinated demonstrations are costly to obtain, making training data scarce for multi-robot teams. Meanwhile, teams must handle far greater task diversity, requiring coordination, role assignment, and adaptation to changing environments.
 						</p>
@@ -231,10 +235,12 @@
 					<div class="detail-card" data-reveal>
 						<h3 class="card-title">Extended abstracts and posters</h3>
 						<p class="card-text">
-								We invite 2-4 page extended abstracts (including references) targeting state-of-the-art research on tightly coupled
-								physical collaboration in multi-robot systems, formatted following IROS guidelines.
+							We invite 2-4 page extended abstracts (including references) targeting state-of-the-art research on tightly coupled
+							physical collaboration in multi-robot systems.
+							check more details in the 
+							<b><a href="../call/index.html">Call for Papers</a></b>.
 						</p>
-						<div class="pill-row" style="margin-top: 1rem;">
+						<div class="pill-row spaced-top">
 							<span class="topic-pill">Collaborative manipulation</span>
 							<span class="topic-pill">Task allocation &amp; scheduling</span>
 							<span class="topic-pill">TAMP</span>
@@ -243,14 +249,14 @@
 						</div>
 					</div>
 						<div class="callout-card" data-reveal>
-							<h3 class="card-title" style="color: rgba(255,255,255,0.72);">Audience</h3>
+							<h3 class="card-title on-dark">Audience</h3>
 							<p class="card-text">
 								Researchers and practitioners in multi-robot systems, motion planning, task and motion planning, robot learning,
 								whole-body control, and embodied AI.
 							</p>
 							<div class="button-row">
-								<a class="button-link secondary" href="attend/index.html"><i class="fa-solid fa-users"></i> Audience and venue</a>
-								<a class="button-link secondary" href="organizers/index.html"><i class="fa-solid fa-address-card"></i> Meet organizers</a>
+								<a class="button-link secondary" href="attend/index.html"><i class="fa-solid fa-users"></i> ATTEND</a>
+								<a class="button-link secondary" href="organizers/index.html"><i class="fa-solid fa-address-card"></i> ORGANIZERS</a>
 							</div>
 						</div>
 				</div>

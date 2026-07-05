@@ -4,22 +4,23 @@
 	--ink-800: #18324c;
 	--ink-700: #2e4c68;
 	--ink-600: #5a7088;
-	--sand-50: #fcfaf5;
-	--sand-100: #f3eee6;
-	--sand-200: #e6dccf;
-	--sand-300: #d8c8b0;
+	--sand-50: #fbfaf7;
+	--sand-100: #f1eee8;
+	--sand-200: #ded8cd;
+	--sand-300: #c7bcae;
 	--teal-500: #1f7a78;
 	--teal-400: #3f9a97;
-	--copper-500: #c6762c;
-	--copper-400: #df9542;
+	--copper-500: #a75f25;
+	--copper-400: #c77d38;
 	--sky-100: #ddeefa;
 	--white: #ffffff;
+	--line: rgba(16, 32, 51, 0.12);
 	--shadow-soft: 0 18px 45px rgba(8, 17, 29, 0.09);
 	--shadow-strong: 0 28px 70px rgba(8, 17, 29, 0.18);
-	--radius-lg: 28px;
-	--radius-md: 20px;
-	--radius-sm: 14px;
-	--shell-width: 1180px;
+	--radius-lg: 22px;
+	--radius-md: 18px;
+	--radius-sm: 12px;
+	--shell-width: 1080px;
 	--nav-height: 72px;
 }
 
@@ -35,7 +36,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: "IBM Plex Sans", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	background:
 		radial-gradient(circle at top left, rgba(63, 154, 151, 0.18), transparent 22%),
 		radial-gradient(circle at top right, rgba(223, 149, 66, 0.14), transparent 24%),
@@ -43,6 +44,15 @@ body {
 	color: var(--ink-900);
 	line-height: 1.65;
 	overflow-x: hidden;
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+	overflow-wrap: break-word;
 }
 
 img {
@@ -61,12 +71,14 @@ a:hover {
 }
 
 .site-shell {
-	width: min(var(--shell-width), calc(100% - clamp(1.25rem, 4vw, 2rem)));
+	width: calc(100% - clamp(1.25rem, 4vw, 2rem));
+	max-width: var(--shell-width);
 	margin: 0 auto;
+	min-width: 0;
 }
 
 .site-nav {
-	min-height: 72px;
+	min-height: 50px;
 	background: rgba(252, 250, 245, 0.92);
 	backdrop-filter: blur(18px);
 	border-bottom: 1px solid rgba(16, 32, 51, 0.08);
@@ -93,10 +105,19 @@ a:hover {
 }
 
 .brand-mark {
-	width: 48px;
-	height: 48px;
-	border-radius: 14px;
-	box-shadow: 0 16px 34px rgba(16, 32, 51, 0.18);
+	width: 44px;
+	height: 44px;
+	border-radius: 8px;
+	box-shadow: none;
+}
+
+.nav-event-badge {
+	display: block;
+	width: auto;
+	height: 34px;
+	max-width: 150px;
+	object-fit: contain;
+	flex: 0 0 auto;
 }
 
 .brand-copy {
@@ -108,7 +129,7 @@ a:hover {
 }
 
 .brand-overline {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.72rem;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
@@ -119,7 +140,7 @@ a:hover {
 }
 
 .brand-title {
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1.08rem;
 	font-weight: 700;
 	color: var(--ink-950);
@@ -137,14 +158,14 @@ a:hover {
 }
 
 .site-nav .nav-link {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.82rem;
 	font-weight: 500;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: var(--ink-700);
 	padding: 0.75rem 0.9rem !important;
-	border-radius: 999px;
+	border-radius: var(--radius-sm);
 	min-height: 44px;
 	display: inline-flex;
 	align-items: center;
@@ -153,13 +174,13 @@ a:hover {
 .site-nav .nav-link:hover,
 .site-nav .nav-link.active {
 	color: var(--ink-950);
-	background: rgba(16, 32, 51, 0.06);
+	background: rgba(16, 32, 51, 0.05);
 }
 
 .site-nav .navbar-toggler {
-	border: 1px solid rgba(16, 32, 51, 0.14);
+	border: 1px solid var(--line);
 	padding: 0.45rem 0.7rem;
-	border-radius: 14px;
+	border-radius: var(--radius-sm);
 	color: var(--ink-900);
 	margin-left: auto;
 	flex: 0 0 auto;
@@ -181,7 +202,14 @@ a:hover {
 	position: relative;
 	overflow: hidden;
 	margin-top: calc(var(--nav-height) * -1);
-	padding: calc(var(--nav-height) + 4.5rem) 0 3.5rem;
+	padding: calc(var(--nav-height) + 5rem) 0 4.2rem;
+	min-height: 550px;
+	display: flex;
+	align-items: end;
+}
+
+.page-hero {
+	align-items: center;
 }
 
 .hero::before {
@@ -189,37 +217,17 @@ a:hover {
 	position: absolute;
 	inset: 0;
 	background:
-		linear-gradient(135deg, rgba(8, 17, 29, 0.94), rgba(16, 32, 51, 0.84) 38%, rgba(31, 122, 120, 0.83) 100%),
+		linear-gradient(135deg, rgba(1, 37, 53, 0.5) 0%, rgba(2, 0, 70, 0.5) 100%),
 		url("img/background.png") center/cover no-repeat;
 	opacity: 1;
 }
 
-.hero::after {
-	content: "";
-	position: absolute;
-	right: -10rem;
-	top: -8rem;
-	width: 28rem;
-	height: 28rem;
-	border-radius: 50%;
-	background: radial-gradient(circle, rgba(223, 149, 66, 0.48), transparent 62%);
-	filter: blur(12px);
-	opacity: 0.9;
-}
-
-.hero.page-hero::after {
-	width: 24rem;
-	height: 24rem;
-	right: -6rem;
-	top: -4rem;
-}
-
 .page-hero .hero-grid {
-	align-items: start;
+	align-items: center;
 }
 
 .page-hero .hero-panel {
-	margin-top: 0.85rem;
+	margin-top: 0;
 }
 
 .hero-inner {
@@ -231,7 +239,7 @@ a:hover {
 	display: grid;
 	grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.95fr);
 	gap: 2rem;
-	align-items: center;
+	align-items: end;
 }
 
 .hero:not(.page-hero) .hero-grid {
@@ -248,18 +256,19 @@ a:hover {
 
 .hero-copy {
 	color: rgba(255, 255, 255, 0.94);
-	min-width: 0;
+	min-width: 1rem;
+	max-width: 100%;
 }
 
 .eyebrow {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.65rem;
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.75rem;
 	letter-spacing: 0.16em;
 	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.72);
+	color: rgba(255, 255, 255, 0.76);
 	margin-bottom: 1.2rem;
 }
 
@@ -272,22 +281,28 @@ a:hover {
 
 .hero-title,
 .page-title {
-	font-family: "Sora", sans-serif;
-	font-weight: 700;
-	line-height: 1.02;
+	font-family: Arial, serif, sans-serif;
+	font-weight: 600;
+	line-height: 1.06;
 	margin: 0;
 	text-wrap: balance;
 }
 
 .hero-title {
-	font-size: clamp(2.8rem, 5vw, 4.75rem);
-	max-width: 16ch;
+	font-size: clamp(2.45rem, 4.25vw, 4.35rem);
+	max-width: 17ch;
 }
 
 .page-title {
-	font-size: clamp(2.5rem, 4vw, 3.9rem);
-	max-width: 15ch;
+	font-size: clamp(2.45rem, 3.8vw, 3.7rem);
+	max-width: 20ch;
 	color: var(--white);
+}
+
+.single-line-title {
+	max-width: none;
+	white-space: nowrap;
+	font-size: clamp(2rem, 3vw, 3.2rem);
 }
 
 .hero-summary,
@@ -301,8 +316,8 @@ a:hover {
 .hero-meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.7rem;
-	margin: 1.5rem 0;
+	gap: 0.65rem 1rem;
+	margin: 1.6rem 0 0;
 }
 
 .meta-chip {
@@ -314,7 +329,7 @@ a:hover {
 	background: rgba(255, 255, 255, 0.12);
 	border: 1px solid rgba(255, 255, 255, 0.14);
 	color: rgba(255, 255, 255, 0.9);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.76rem;
 	letter-spacing: 0.04em;
 	line-height: 1.35;
@@ -333,16 +348,16 @@ a:hover {
 	align-items: center;
 	justify-content: center;
 	gap: 0.55rem;
-	padding: 0.92rem 1.25rem;
-	border-radius: 999px;
-	font-family: "IBM Plex Mono", monospace;
+	padding: 0.82rem 1rem;
+	border-radius: var(--radius-sm);
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.78rem;
 	font-weight: 500;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	text-decoration: none;
 	border: 1px solid transparent;
-	transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 	text-align: center;
 	line-height: 1.35;
 }
@@ -352,9 +367,9 @@ a:hover {
 }
 
 .button-link.primary {
-	background: linear-gradient(135deg, var(--copper-500), var(--copper-400));
+	background: var(--copper-500);
 	color: var(--white);
-	box-shadow: 0 18px 34px rgba(198, 118, 44, 0.28);
+	box-shadow: none;
 }
 
 .button-link.secondary {
@@ -366,13 +381,14 @@ a:hover {
 .button-link.light {
 	background: var(--white);
 	color: var(--ink-950);
-	box-shadow: var(--shadow-soft);
+	box-shadow: none;
+	border-color: var(--line);
 }
 
 .hero-panel {
 	position: relative;
 	padding: 1.4rem;
-	border-radius: 30px;
+	border-radius: 24px;
 	background: rgba(252, 250, 245, 0.94);
 	box-shadow: var(--shadow-strong);
 	min-width: 0;
@@ -382,10 +398,10 @@ a:hover {
 	display: inline-flex;
 	align-items: center;
 	padding: 0.34rem 0.65rem;
-	border-radius: 999px;
+	border-radius: var(--radius-sm);
 	background: rgba(16, 32, 51, 0.08);
 	color: var(--ink-900);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.7rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -393,7 +409,7 @@ a:hover {
 }
 
 .panel-title {
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1.45rem;
 	line-height: 1.15;
 	margin: 0;
@@ -418,8 +434,8 @@ a:hover {
 	width: 100%;
 	aspect-ratio: 4 / 5;
 	object-fit: cover;
-	border-radius: 18px;
-	border: 2px solid rgba(16, 32, 51, 0.08);
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--line);
 }
 
 .portrait-strip-all-speakers {
@@ -439,13 +455,13 @@ a:hover {
 
 .stat-card {
 	padding: 1rem;
-	border-radius: 18px;
+	border-radius: var(--radius-sm);
 	background: var(--white);
-	border: 1px solid rgba(16, 32, 51, 0.08);
+	border: 1px solid var(--line);
 }
 
 .stat-value {
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1.8rem;
 	font-weight: 700;
 	line-height: 1;
@@ -455,7 +471,7 @@ a:hover {
 .stat-label {
 	display: block;
 	margin-top: 0.35rem;
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.74rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -483,7 +499,7 @@ a:hover {
 }
 
 .section-kicker {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.76rem;
 	text-transform: uppercase;
 	letter-spacing: 0.16em;
@@ -492,9 +508,9 @@ a:hover {
 }
 
 .section-title {
-	font-family: "Sora", sans-serif;
-	font-size: clamp(1.85rem, 3vw, 2.8rem);
-	line-height: 1.05;
+	font-family: Arial, serif, sans-serif;
+	font-size: clamp(1.65rem, 2.6vw, 2.45rem);
+	line-height: 1.12;
 	margin: 0;
 	color: var(--ink-950);
 	text-wrap: balance;
@@ -518,9 +534,17 @@ a:hover {
 	margin-bottom: 0;
 }
 
+.copy-stack {
+	width: 100%;
+	max-width: 100%;
+}
+
 .copy-stack p,
 .copy-stack li {
 	color: var(--ink-800);
+	font-size: 1.04rem;
+	overflow-wrap: normal;
+	word-break: normal;
 }
 
 .copy-stack ul {
@@ -544,8 +568,8 @@ a:hover {
 .organizer-card,
 .agenda-card,
 .callout-card {
-	background: rgba(255, 255, 255, 0.86);
-	border: 1px solid rgba(16, 32, 51, 0.08);
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid var(--line);
 	border-radius: var(--radius-md);
 	box-shadow: var(--shadow-soft);
 }
@@ -559,9 +583,9 @@ a:hover {
 }
 
 .card-icon {
-	width: 2.8rem;
-	height: 2.8rem;
-	border-radius: 14px;
+	width: 2.55rem;
+	height: 2.55rem;
+	border-radius: var(--radius-sm);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -572,9 +596,9 @@ a:hover {
 }
 
 .card-title {
-	font-family: "Sora", sans-serif;
-	font-size: 1.15rem;
-	line-height: 1.18;
+	font-family: Arial, serif, sans-serif;
+	font-size: 1.08rem;
+	line-height: 1.22;
 	margin: 0 0 0.55rem;
 	color: var(--ink-950);
 	text-wrap: balance;
@@ -602,9 +626,9 @@ a:hover {
 
 .theme-pill {
 	padding: 0.95rem 1rem;
-	border-radius: 18px;
+	border-radius: var(--radius-sm);
 	background: rgba(255, 255, 255, 0.84);
-	border: 1px solid rgba(16, 32, 51, 0.08);
+	border: 1px solid var(--line);
 	font-weight: 500;
 	color: var(--ink-900);
 }
@@ -634,16 +658,16 @@ a:hover {
 
 .speaker-role,
 .micro-label {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.72rem;
 	text-transform: uppercase;
 	letter-spacing: 0.09em;
-	color: var(--copper-500);
+	color: var(--teal-500);
 }
 
 .speaker-name,
 .person-name {
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1.08rem;
 	line-height: 1.15;
 	margin: 0.38rem 0 0.32rem;
@@ -662,7 +686,7 @@ a:hover {
 .speaker-talk {
 	margin-top: 0.85rem;
 	padding-top: 0.85rem;
-	border-top: 1px solid rgba(16, 32, 51, 0.08);
+	border-top: 1px solid var(--line);
 	color: var(--ink-800);
 	overflow-wrap: anywhere;
 }
@@ -671,10 +695,10 @@ a:hover {
 	display: inline-flex;
 	margin-top: 0.75rem;
 	padding: 0.38rem 0.6rem;
-	border-radius: 999px;
+	border-radius: var(--radius-sm);
 	background: rgba(16, 32, 51, 0.06);
 	color: var(--ink-700);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.7rem;
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
@@ -685,7 +709,7 @@ a:hover {
 	width: 100%;
 	border-radius: 22px;
 	background: rgba(255, 255, 255, 0.9);
-	border: 1px solid rgba(16, 32, 51, 0.08);
+	border: 1px solid var(--line);
 	box-shadow: var(--shadow-soft);
 }
 
@@ -694,9 +718,9 @@ a:hover {
 	grid-template-columns: 170px minmax(0, 1fr);
 	gap: 1rem;
 	padding: 1rem 1.2rem;
-	background: linear-gradient(135deg, rgba(16, 32, 51, 0.96), rgba(31, 122, 120, 0.88));
+	background: var(--ink-950);
 	color: var(--white);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.78rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -707,15 +731,15 @@ a:hover {
 	grid-template-columns: 170px minmax(0, 1fr);
 	gap: 1rem;
 	padding: 1rem 1.2rem;
-	border-top: 1px solid rgba(16, 32, 51, 0.08);
+	border-top: 1px solid var(--line);
 }
 
 .schedule-row:nth-child(even) {
-	background: rgba(243, 238, 230, 0.45);
+	background: rgba(241, 238, 232, 0.55);
 }
 
 .schedule-time {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.78rem;
 	color: var(--copper-500);
 	text-transform: uppercase;
@@ -724,7 +748,7 @@ a:hover {
 
 .schedule-event-title {
 	display: block;
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1rem;
 	line-height: 1.2;
 	color: var(--ink-950);
@@ -761,7 +785,7 @@ a:hover {
 	gap: 1rem;
 	align-items: start;
 	padding-bottom: 0.85rem;
-	border-bottom: 1px solid rgba(16, 32, 51, 0.08);
+	border-bottom: 1px solid var(--line);
 }
 
 .agenda-item:last-child {
@@ -770,7 +794,7 @@ a:hover {
 }
 
 .agenda-time {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.78rem;
 	color: var(--copper-500);
 	text-transform: uppercase;
@@ -778,7 +802,7 @@ a:hover {
 }
 
 .agenda-title {
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1rem;
 	margin: 0;
 	color: var(--ink-950);
@@ -806,10 +830,10 @@ a:hover {
 	width: 78px;
 	height: 78px;
 	flex: 0 0 78px;
-	border-radius: 20px;
+	border-radius: var(--radius-sm);
 	overflow: hidden;
 	background: linear-gradient(135deg, rgba(31, 122, 120, 0.22), rgba(223, 149, 66, 0.26));
-	box-shadow: inset 0 0 0 1px rgba(16, 32, 51, 0.06);
+	box-shadow: inset 0 0 0 1px var(--line);
 }
 
 .person-avatar img {
@@ -823,22 +847,10 @@ a:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	font-size: 1.45rem;
 	font-weight: 700;
 	color: var(--ink-950);
-}
-
-.tone-teal {
-	background: linear-gradient(135deg, rgba(31, 122, 120, 0.25), rgba(173, 227, 224, 0.95));
-}
-
-.tone-copper {
-	background: linear-gradient(135deg, rgba(198, 118, 44, 0.25), rgba(246, 216, 183, 0.95));
-}
-
-.tone-ink {
-	background: linear-gradient(135deg, rgba(16, 32, 51, 0.18), rgba(221, 238, 250, 0.95));
 }
 
 .person-links {
@@ -849,7 +861,7 @@ a:hover {
 }
 
 .micro-link {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.72rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -869,10 +881,10 @@ a:hover {
 
 .topic-pill {
 	padding: 0.6rem 0.85rem;
-	border-radius: 999px;
+	border-radius: var(--radius-sm);
 	background: rgba(16, 32, 51, 0.06);
 	color: var(--ink-900);
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.76rem;
 	letter-spacing: 0.04em;
 }
@@ -890,11 +902,11 @@ a:hover {
 	padding: 1rem 1.1rem;
 	border-radius: 18px;
 	background: rgba(255, 255, 255, 0.88);
-	border: 1px solid rgba(16, 32, 51, 0.08);
+	border: 1px solid var(--line);
 }
 
 .timeline-date {
-	font-family: "IBM Plex Mono", monospace;
+	font-family: Arial, serif, sans-serif;
 	font-size: 0.76rem;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
@@ -903,7 +915,7 @@ a:hover {
 
 .timeline-copy strong {
 	display: block;
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	color: var(--ink-950);
 	margin-bottom: 0.24rem;
 }
@@ -922,14 +934,14 @@ a:hover {
 	padding: 1rem 1.1rem;
 	border-radius: 18px;
 	background: rgba(255, 255, 255, 0.86);
-	border: 1px solid rgba(16, 32, 51, 0.08);
+	border: 1px solid var(--line);
 	box-shadow: var(--shadow-soft);
 	color: var(--ink-900);
 }
 
 .reference-link strong {
 	display: block;
-	font-family: "Sora", sans-serif;
+	font-family: Arial, serif, sans-serif;
 	margin-bottom: 0.2rem;
 	color: var(--ink-950);
 }
@@ -963,7 +975,7 @@ a:hover {
 	justify-content: space-between;
 	gap: 1rem;
 	padding-top: 1.3rem;
-	border-top: 1px solid rgba(16, 32, 51, 0.08);
+	border-top: 1px solid var(--line);
 }
 
 .footer-note {
@@ -999,6 +1011,14 @@ a:hover {
 	transform: translateY(0);
 }
 
+.card-title.on-dark {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.spaced-top {
+	margin-top: 1rem;
+}
+
 @media (max-width: 1199px) {
 	.hero-grid {
 		grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
@@ -1027,7 +1047,7 @@ a:hover {
 	}
 
 	.site-shell {
-		width: min(var(--shell-width), calc(100% - 1.6rem));
+		width: calc(100% - 1.6rem);
 	}
 
 	.hero,
@@ -1052,10 +1072,10 @@ a:hover {
 		width: 100%;
 		margin-top: 0.35rem;
 		padding: 0.45rem;
-		border-radius: 20px;
+		border-radius: var(--radius-md);
 		background: rgba(252, 250, 245, 0.98);
-		border: 1px solid rgba(16, 32, 51, 0.08);
-		box-shadow: var(--shadow-soft);
+		border: 1px solid var(--line);
+		box-shadow: none;
 		max-height: calc(100vh - var(--nav-height) - 1rem);
 		overflow-y: auto;
 		overscroll-behavior: contain;
@@ -1091,7 +1111,25 @@ a:hover {
 
 @media (max-width: 767px) {
 	.site-shell {
-		width: min(var(--shell-width), calc(100% - 1.15rem));
+		width: calc(100% - 2rem);
+		max-width: calc(100vw - 2rem);
+	}
+
+	.hero-copy,
+	.copy-stack,
+	.copy-stack p,
+	.section-header,
+	.card-grid,
+	.speaker-grid,
+	.organizer-grid,
+	.split-grid {
+		max-width: calc(100vw - 2rem);
+	}
+
+	.copy-stack,
+	.copy-stack p {
+		width: calc(100vw - 4rem);
+		max-width: 34rem;
 	}
 
 	.hero,
@@ -1101,7 +1139,8 @@ a:hover {
 
 	.hero-title,
 	.page-title {
-		max-width: none;
+		font-size: clamp(2.05rem, 9vw, 2.75rem);
+		max-width: 13ch;
 	}
 
 	.hero-summary,
@@ -1220,10 +1259,11 @@ a:hover {
 
 	.hero {
 		padding: calc(var(--nav-height) + 2.8rem) 0 2.7rem;
+		min-height: 520px;
 	}
 
 	.hero-panel {
-		border-radius: 24px;
+		border-radius: var(--radius-lg);
 	}
 
 	.panel-title {
@@ -1246,13 +1286,25 @@ a:hover {
 
 	.site-nav .navbar-collapse {
 		padding: 0.35rem;
-		border-radius: 18px;
+		border-radius: var(--radius-md);
 	}
 }
 
 @media (max-width: 420px) {
+	.section .site-shell {
+		width: calc(100vw - 4rem) !important;
+		max-width: calc(100vw - 4rem) !important;
+		margin-left: 1rem;
+		margin-right: auto;
+	}
+
 	.brand-lockup {
 		gap: 0.65rem;
+	}
+
+	.nav-event-badge {
+		height: 30px;
+		max-width: 120px;
 	}
 
 	.brand-overline {
