@@ -113,11 +113,13 @@ a:hover {
 
 .nav-event-badge {
 	display: block;
-	width: auto;
-	height: 34px;
-	max-width: 150px;
+	width: min(120px, 14vw);
+	height: 28px;
+	max-width: 120px;
+	max-height: 28px;
 	object-fit: contain;
 	flex: 0 0 auto;
+	overflow: hidden;
 }
 
 .brand-copy {
@@ -1303,8 +1305,10 @@ a:hover {
 	}
 
 	.nav-event-badge {
-		height: 30px;
-		max-width: 120px;
+		width: 100px;
+		height: 24px;
+		max-width: 100px;
+		max-height: 24px;
 	}
 
 	.brand-overline {
