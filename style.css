@@ -846,6 +846,10 @@ a:hover {
 	object-position: center top;
 }
 
+.person-avatar-jiazhen img {
+	object-position: center center;
+}
+
 .avatar-initials {
 	display: flex;
 	align-items: center;
